@@ -1,13 +1,14 @@
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react'
 
-type Variant = 'primary' | 'secondary' | 'ghost'
+type Variant = 'primary' | 'donate' | 'ghost' | 'ghost-light'
 
 const variantClasses: Record<Variant, string> = {
   primary:
     'bg-gold text-ink-900 hover:bg-gold-light active:bg-gold-dark border border-transparent',
-  secondary:
-    'bg-transparent text-paper border border-paper/40 hover:border-paper hover:bg-paper/10',
+  donate: 'bg-red text-paper hover:bg-red-light active:bg-red-dark border border-transparent',
   ghost: 'bg-transparent text-ink border border-ink/25 hover:border-ink hover:bg-ink/5',
+  'ghost-light':
+    'bg-transparent text-paper border border-paper/50 hover:border-paper hover:bg-paper/10',
 }
 
 const baseClasses =

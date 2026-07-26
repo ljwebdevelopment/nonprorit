@@ -1,11 +1,13 @@
 import Footer from './components/Footer'
 import Header from './components/Header'
 import Apply from './sections/Apply'
+import Donate from './sections/Donate'
 import FounderGuides from './sections/FounderGuides'
+import FounderSpotlight from './sections/FounderSpotlight'
 import GrantDetails from './sections/GrantDetails'
 import Hero from './sections/Hero'
 import HowItWorks from './sections/HowItWorks'
-import Support from './sections/Support'
+import ImpactBar from './sections/ImpactBar'
 
 export default function App() {
   return (
@@ -13,11 +15,13 @@ export default function App() {
       <Header />
       <main>
         <Hero />
+        <ImpactBar />
         <HowItWorks />
         <GrantDetails />
+        <FounderSpotlight />
         <FounderGuides />
         <Apply />
-        <Support />
+        <Donate />
       </main>
       <Footer />
     </div>

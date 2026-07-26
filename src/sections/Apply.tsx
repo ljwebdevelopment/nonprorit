@@ -157,13 +157,13 @@ export default function Apply() {
           <button
             type="submit"
             disabled={status === 'submitting'}
-            className="mt-2 inline-flex w-fit items-center justify-center gap-2 rounded-full bg-ink px-7 py-3 text-sm font-semibold text-paper transition-colors hover:bg-ink-600 disabled:cursor-not-allowed disabled:opacity-60"
+            className="mt-2 inline-flex w-fit items-center justify-center gap-2 rounded-full bg-gold px-7 py-3 text-sm font-semibold text-ink-900 transition-colors hover:bg-gold-light disabled:cursor-not-allowed disabled:opacity-60"
           >
             {status === 'submitting' ? 'Sending…' : 'Submit application'}
           </button>
 
           <p role="status" aria-live="polite" className="min-h-[1.25rem] text-sm">
-            {status === 'success' && <span className="text-sage-dark">{message}</span>}
+            {status === 'success' && <span className="text-green-700">{message}</span>}
             {status === 'error' && <span className="text-red-700">{message}</span>}
           </p>
         </form>

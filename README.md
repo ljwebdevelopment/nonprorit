@@ -25,11 +25,26 @@ npm run dev
 
 ```
 src/
-  components/   reusable UI (Button, Header, Footer, SeedPacketCard, ...)
-  sections/     one file per landing page section (Hero, Apply, Support, ...)
+  components/   reusable UI (Button, Header, Footer, Logo, PhotoSlot, ...)
+  sections/     one file per landing page section (Hero, Apply, Donate, ...)
   lib/          config + placeholder submission client (api.ts, config.ts)
   types/        shared TypeScript types for form payloads and content
+public/images/  photos referenced by <PhotoSlot> (see below)
 ```
+
+## Photos
+
+Sections use `<PhotoSlot src="/images/whatever.png" label="..." />`
+(`src/components/PhotoSlot.tsx`) instead of a plain `<img>`. If the file at
+`src` is missing, it renders a labeled placeholder instead of a broken image
+icon, so the layout still looks intentional. Currently filled in:
+
+- `public/images/hero.png` &mdash; hero background
+- `public/images/how-it-works.png` &mdash; How It Works photo
+- `public/images/founder-spotlight.png` &mdash; founder stories photo
+
+Still a placeholder: `public/images/donate.jpg` (Donate section background).
+Drop a file in with that exact name and it appears with no code changes.
 
 ## Wiring up a real backend later
 

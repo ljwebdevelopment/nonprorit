@@ -15,8 +15,8 @@ export default function SeedPacketCard({
   footerNote?: string
 }) {
   return (
-    <div className="relative mx-auto w-full max-w-md overflow-hidden rounded-2xl border-2 border-ink bg-cream shadow-card">
-      <div className="bg-seed-texture bg-ink px-7 py-6 text-paper">
+    <div className="relative mx-auto w-full max-w-md overflow-hidden rounded-2xl border-2 border-red bg-cream shadow-card">
+      <div className="bg-seed-texture bg-red px-7 py-6 text-paper">
         <div className="flex items-center justify-between font-mono text-[11px] font-semibold uppercase tracking-[0.25em] text-gold-light">
           <span>Sprout Fund</span>
           <span>No. 001</span>
