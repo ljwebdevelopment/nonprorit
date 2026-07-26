@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
@@ -15,9 +15,513 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <header class="site-header">
+      <div class="container">
+        <a href="#top" aria-label="Sprout Fund home" class="logo">
+          <svg class="logo__mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <circle cx="20" cy="20" r="19" fill="#A5312C" stroke="#D4A93A" stroke-width="1.5" />
+            <path d="M20 29V19" stroke="#D4A93A" stroke-width="2" stroke-linecap="round" />
+            <path d="M20 19c0 0-8 0-8-8 8 0 8 8 8 8Z" fill="#D4A93A" />
+            <path d="M20 23c0 0 8 0 8-8-8 0-8 8-8 8Z" fill="#F1E4CD" />
+          </svg>
+          <span class="logo__word">Sprout <span>Fund</span></span>
+        </a>
+
+        <nav aria-label="Primary" class="site-nav">
+          <a href="#how-it-works">How it works</a>
+          <a href="#guides">Founder guides</a>
+          <a href="#stories">Stories</a>
+          <a href="#apply">Apply</a>
+        </nav>
+
+        <div class="header-actions">
+          <a href="#apply" class="btn btn-ghost btn-apply-nav">Apply now</a>
+          <a href="#donate" class="btn btn-donate">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M12 20.5s-7.5-4.6-9.8-9C.6 8.1 2 4.5 5.6 4c2.2-.3 4.2.8 6.4 3 2.2-2.2 4.2-3.3 6.4-3 3.6.5 5 4.1 3.4 7.5-2.3 4.4-9.8 9-9.8 9Z"
+                fill="currentColor"
+              />
+            </svg>
+            Donate
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section id="top" class="hero">
+        <img
+          class="hero__photo"
+          src="images/hero.png"
+          alt=""
+          data-fallback-label="hero.png — wide shot, teen founder at work or rural OK scenery, 1920×1200"
+        />
+        <div class="hero__overlay" aria-hidden="true"></div>
+        <div class="hero__overlay hero__overlay--flat" aria-hidden="true"></div>
+
+        <div class="container">
+          <div class="hero__content">
+            <span class="hero__badge">Tahlequah, Oklahoma</span>
+
+            <h1 class="hero__title">Every idea starts as a seed.</h1>
+
+            <p class="hero__desc">
+              Sprout Fund gives rural Oklahoma teens, ages 13&ndash;19, small micro-grants of
+              $100&ndash;$500 and plain-spoken founder guides to turn a small business idea into
+              something real.
+            </p>
+
+            <div class="hero__actions">
+              <a href="#apply" class="btn btn-primary">Apply for a grant</a>
+              <a href="#donate" class="btn btn-donate">Donate now</a>
+            </div>
+
+            <dl class="hero__stats">
+              <div>
+                <dt>Grant size</dt>
+                <dd>$100&ndash;$500</dd>
+              </div>
+              <div>
+                <dt>Ages</dt>
+                <dd>13&ndash;19</dd>
+              </div>
+              <div>
+                <dt>Where</dt>
+                <dd>Rural OK</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="hero__card-wrap">
+            <div class="hero__card">
+              <p class="hero__card-label">Seed Packet &middot; Series A</p>
+              <p class="hero__card-quote">
+                &ldquo;A lawn-mowing route, a beading business, a mobile car wash&mdash;we&rsquo;ve
+                funded all three.&rdquo;
+              </p>
+              <div class="hero__card-footer">
+                <svg width="30" height="30" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                  <circle cx="20" cy="20" r="19" fill="#A5312C" stroke="#D4A93A" stroke-width="1.5" />
+                  <path d="M20 29V19" stroke="#D4A93A" stroke-width="2" stroke-linecap="round" />
+                  <path d="M20 19c0 0-8 0-8-8 8 0 8 8 8 8Z" fill="#D4A93A" />
+                </svg>
+                <p>Grown right here in Oklahoma</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Impact bar -->
+      <section class="stats-bar">
+        <div class="container">
+          <div class="stats-bar__grid">
+            <div class="stats-bar__item">
+              <span class="stats-bar__value">$0</span>
+              <span class="stats-bar__label">Cost to apply</span>
+            </div>
+            <div class="stats-bar__item">
+              <span class="stats-bar__value">~2 wks</span>
+              <span class="stats-bar__label">Time to a decision</span>
+            </div>
+            <div class="stats-bar__item">
+              <span class="stats-bar__value">100%</span>
+              <span class="stats-bar__label">Applications read by a person</span>
+            </div>
+            <div class="stats-bar__item">
+              <span class="stats-bar__value">4</span>
+              <span class="stats-bar__label">Free founder guides</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section id="how-it-works" class="section how-it-works">
+        <div class="container">
+          <div class="section-heading">
+            <span class="section-heading__eyebrow">How it works</span>
+            <h2 class="section-heading__title">From seed to harvest, in three stages</h2>
+            <p class="section-heading__desc">
+              Sprout Fund keeps the process short and honest, the same way a good seed packet
+              tells you exactly what to expect.
+            </p>
+          </div>
+
+          <div class="how-it-works__grid">
+            <img
+              class="how-it-works__photo"
+              src="images/how-it-works.png"
+              alt="A group of teens sitting together outdoors"
+              data-fallback-label="how-it-works.png — teen founder building/selling product, 4:5"
+            />
+
+            <ol class="stage-list">
+              <div class="stage-list__line" aria-hidden="true"></div>
+
+              <li class="stage">
+                <span class="stage__number">01</span>
+                <div class="stage__body">
+                  <span class="stage__name">Sow</span>
+                  <p class="stage__title">Apply in 10 minutes</p>
+                  <p class="stage__desc">
+                    Tell us who you are and what you want to build. No business plan
+                    required—just a real idea and a clear ask.
+                  </p>
+                </div>
+              </li>
+
+              <li class="stage">
+                <span class="stage__number">02</span>
+                <div class="stage__body">
+                  <span class="stage__name">Grow</span>
+                  <p class="stage__title">Get funded and guided</p>
+                  <p class="stage__desc">
+                    Approved founders receive a $100–$500 micro-grant plus founder guides and a
+                    check-in with our team to help you plan next steps.
+                  </p>
+                </div>
+              </li>
+
+              <li class="stage">
+                <span class="stage__number">03</span>
+                <div class="stage__body">
+                  <span class="stage__name">Harvest</span>
+                  <p class="stage__title">Build it and report back</p>
+                  <p class="stage__desc">
+                    Launch your idea, put the grant to work, and send us a short update on what
+                    grew. Your story helps fund the next teen founder.
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Grant details -->
+      <section class="section grant-details">
+        <div class="container">
+          <div class="section-heading">
+            <span class="section-heading__eyebrow">The grant, at a glance</span>
+            <h2 class="section-heading__title">Small money, real terms, no fine print</h2>
+            <p class="section-heading__desc">
+              Every grant works the same way—read it like the back of a seed packet. If you're
+              not sure whether your idea qualifies, apply anyway and we'll help you figure it
+              out.
+            </p>
+          </div>
+
+          <div class="seed-packet">
+            <div class="seed-packet__header">
+              <div class="seed-packet__row">
+                <span>Sprout Fund</span>
+                <span>No. 001</span>
+              </div>
+              <h3 class="seed-packet__title">Micro-Grant</h3>
+              <p class="seed-packet__subtitle">Sprout Fund &middot; Rural Oklahoma</p>
+            </div>
+
+            <div class="seed-packet__divider" aria-hidden="true"></div>
+
+            <dl class="seed-packet__rows">
+              <div class="seed-packet__data-row">
+                <dt class="seed-packet__label">Grant size</dt>
+                <dd class="seed-packet__value">$100 – $500</dd>
+              </div>
+              <div class="seed-packet__data-row">
+                <dt class="seed-packet__label">Who can apply</dt>
+                <dd class="seed-packet__value">Ages 13–19, rural OK</dd>
+              </div>
+              <div class="seed-packet__data-row">
+                <dt class="seed-packet__label">Funds cover</dt>
+                <dd class="seed-packet__value">Supplies, tools, fees</dd>
+              </div>
+              <div class="seed-packet__data-row">
+                <dt class="seed-packet__label">Won't cover</dt>
+                <dd class="seed-packet__value">Personal expenses</dd>
+              </div>
+              <div class="seed-packet__data-row">
+                <dt class="seed-packet__label">Decision time</dt>
+                <dd class="seed-packet__value">~2 weeks</dd>
+              </div>
+              <div class="seed-packet__data-row">
+                <dt class="seed-packet__label">Reporting</dt>
+                <dd class="seed-packet__value">One short update</dd>
+              </div>
+            </dl>
+
+            <div class="seed-packet__divider" aria-hidden="true"></div>
+
+            <p class="seed-packet__footer">Plant anywhere in Oklahoma &middot; Germinates in ~2 weeks</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Founder spotlight -->
+      <section id="stories" class="section founder-spotlight">
+        <div class="container">
+          <img
+            class="founder-spotlight__photo"
+            src="images/founder-spotlight.png"
+            alt="A smiling teen looking toward the camera outdoors"
+            data-fallback-label="founder-spotlight.png — funded teen founder portrait, 4:5"
+          />
+
+          <div class="founder-spotlight__content">
+            <div class="section-heading">
+              <span class="section-heading__eyebrow">Founder stories</span>
+              <h2 class="section-heading__title">Our first cohort is getting to work</h2>
+              <p class="section-heading__desc">
+                We're funding our very first round of teen founders across rural Oklahoma right
+                now. Their stories—what they built, what they learned, what they'd tell the next
+                applicant—will live here soon.
+              </p>
+            </div>
+            <div class="founder-spotlight__callout">
+              <p>
+                <strong>Already a Sprout Fund founder?</strong> We'd love to feature your
+                business. Reply to your grant email or reach out through the
+                <a href="#donate">contact form below</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Founder guides -->
+      <section id="guides" class="section founder-guides">
+        <div class="container">
+          <div class="section-heading">
+            <span class="section-heading__eyebrow">Founder guides</span>
+            <h2 class="section-heading__title">Free guides on business basics</h2>
+            <p class="section-heading__desc">
+              No coding lessons here—just plain-spoken guides on the business fundamentals every
+              founder needs: validating an idea, pricing it, finding customers, and registering
+              it in Oklahoma.
+            </p>
+          </div>
+
+          <div class="guide-grid">
+            <div class="guide-card">
+              <div class="guide-card__top">
+                <div class="guide-card__row">
+                  <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true" class="guide-card__icon">
+                    <rect x="6" y="4" width="20" height="24" rx="2" stroke="currentColor" stroke-width="2" />
+                    <path d="M11 11h10M11 16h10M11 21h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                  <span class="guide-card__badge">Coming soon</span>
+                </div>
+                <h3 class="guide-card__title">Business Plan Basics</h3>
+                <p class="guide-card__desc">A one-page plan template built for a first business, not an MBA.</p>
+              </div>
+              <button type="button" class="guide-card__cta" disabled>PDF coming soon</button>
+            </div>
+
+            <div class="guide-card">
+              <div class="guide-card__top">
+                <div class="guide-card__row">
+                  <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true" class="guide-card__icon">
+                    <rect x="6" y="4" width="20" height="24" rx="2" stroke="currentColor" stroke-width="2" />
+                    <path d="M11 11h10M11 16h10M11 21h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                  <span class="guide-card__badge">Coming soon</span>
+                </div>
+                <h3 class="guide-card__title">Pricing 101</h3>
+                <p class="guide-card__desc">How to price your product or service so you actually make money.</p>
+              </div>
+              <button type="button" class="guide-card__cta" disabled>PDF coming soon</button>
+            </div>
+
+            <div class="guide-card">
+              <div class="guide-card__top">
+                <div class="guide-card__row">
+                  <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true" class="guide-card__icon">
+                    <rect x="6" y="4" width="20" height="24" rx="2" stroke="currentColor" stroke-width="2" />
+                    <path d="M11 11h10M11 16h10M11 21h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                  <span class="guide-card__badge">Coming soon</span>
+                </div>
+                <h3 class="guide-card__title">Getting Your First Customer</h3>
+                <p class="guide-card__desc">Simple, low-cost ways to find and keep your first paying customers.</p>
+              </div>
+              <button type="button" class="guide-card__cta" disabled>PDF coming soon</button>
+            </div>
+
+            <div class="guide-card">
+              <div class="guide-card__top">
+                <div class="guide-card__row">
+                  <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true" class="guide-card__icon">
+                    <rect x="6" y="4" width="20" height="24" rx="2" stroke="currentColor" stroke-width="2" />
+                    <path d="M11 11h10M11 16h10M11 21h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                  <span class="guide-card__badge">Coming soon</span>
+                </div>
+                <h3 class="guide-card__title">Registering a Business in Oklahoma</h3>
+                <p class="guide-card__desc">A plain-English walkthrough of what teens and families need to file.</p>
+              </div>
+              <button type="button" class="guide-card__cta" disabled>PDF coming soon</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Apply -->
+      <section id="apply" class="section apply">
+        <div class="container">
+          <div class="section-heading">
+            <span class="section-heading__eyebrow">Apply</span>
+            <h2 class="section-heading__title">Ready to plant your idea?</h2>
+            <p class="section-heading__desc">
+              Fill out the form below in a few minutes. We read every application ourselves—no
+              algorithms, no gatekeeping. We'll follow up by email either way.
+            </p>
+          </div>
+
+          <form id="apply-form" class="form" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Full name</label>
+                <input id="name" name="name" type="text" required autocomplete="name" />
+              </div>
+              <div class="field">
+                <label for="email">Email address</label>
+                <input id="email" name="email" type="email" required autocomplete="email" />
+              </div>
+              <div class="field">
+                <label for="age">Age</label>
+                <input id="age" name="age" type="number" min="13" max="19" required />
+              </div>
+              <div class="field">
+                <label for="town">Town / county</label>
+                <input id="town" name="town" type="text" required placeholder="e.g. Tahlequah" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="ideaDescription">What's your business idea?</label>
+              <textarea id="ideaDescription" name="ideaDescription" required rows="4"></textarea>
+            </div>
+
+            <div class="field">
+              <label for="grantUse">What would the grant fund?</label>
+              <textarea
+                id="grantUse"
+                name="grantUse"
+                required
+                rows="3"
+                placeholder="e.g. lawn mower repairs, craft supplies, a starter inventory of..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit-apply">Submit application</button>
+
+            <p id="apply-status" role="status" aria-live="polite" class="form-status"></p>
+          </form>
+        </div>
+      </section>
+
+      <!-- Donate -->
+      <section id="donate" class="section donate">
+        <div class="container">
+          <div class="donate__left">
+            <div class="section-heading section-heading--light">
+              <span class="section-heading__eyebrow">Donate</span>
+              <h2 class="section-heading__title">Help a teen founder get started</h2>
+              <p class="section-heading__desc">
+                We're not set up to process donations online yet, but we'd love to talk with you
+                about funding a grant, sponsoring a founder guide, or partnering with us in rural
+                Oklahoma.
+              </p>
+            </div>
+
+            <ul class="giving-list">
+              <li>
+                <span class="giving-list__amount">$100</span>
+                <span class="giving-list__desc">Funds a starter micro-grant</span>
+              </li>
+              <li>
+                <span class="giving-list__amount">$500</span>
+                <span class="giving-list__desc">Funds a full micro-grant</span>
+              </li>
+              <li>
+                <span class="giving-list__amount">In-kind</span>
+                <span class="giving-list__desc">Sponsor a founder guide or workshop</span>
+              </li>
+            </ul>
+
+            <a
+              href="mailto:hello@sproutfundok.org?subject=Supporting%20Sprout%20Fund"
+              class="btn btn-primary"
+              >Donate via email: hello@sproutfundok.org</a
+            >
+          </div>
+
+          <form id="donate-form" class="form" novalidate>
+            <div class="form-row">
+              <div class="field field--light">
+                <label for="support-name">Name</label>
+                <input id="support-name" name="name" type="text" required autocomplete="name" />
+              </div>
+              <div class="field field--light">
+                <label for="support-email">Email address</label>
+                <input id="support-email" name="email" type="email" required autocomplete="email" />
+              </div>
+            </div>
+
+            <div class="field field--light">
+              <label for="support-message">How would you like to help?</label>
+              <textarea
+                id="support-message"
+                name="message"
+                required
+                rows="4"
+                placeholder="e.g. I'd like to fund a grant, sponsor a guide, or ask about a partnership..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-ghost-light btn-submit-donate">Send message</button>
+
+            <p id="donate-status" role="status" aria-live="polite" class="form-status"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__brand">
+          <span class="logo logo--reversed">
+            <svg class="logo__mark logo__mark--sm" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <circle cx="20" cy="20" r="19" fill="#A5312C" stroke="#D4A93A" stroke-width="1.5" />
+              <path d="M20 29V19" stroke="#D4A93A" stroke-width="2" stroke-linecap="round" />
+              <path d="M20 19c0 0-8 0-8-8 8 0 8 8 8 8Z" fill="#D4A93A" />
+              <path d="M20 23c0 0 8 0 8-8-8 0-8 8-8 8Z" fill="#F1E4CD" />
+            </svg>
+            <span class="logo__word">Sprout <span>Fund</span></span>
+          </span>
+          <p>Tahlequah, Oklahoma</p>
+          <a href="mailto:hello@sproutfundok.org">hello@sproutfundok.org</a>
+        </div>
+
+        <nav aria-label="Footer" class="site-footer__nav">
+          <a href="#how-it-works">How it works</a>
+          <a href="#guides">Founder guides</a>
+          <a href="#apply">Apply for a grant</a>
+          <a href="#donate" class="donate-link">Donate</a>
+        </nav>
+      </div>
+
+      <div class="container site-footer__legal">
+        <p>&copy; <span id="year"></span> Sprout Fund. A micro-grant program for teen founders in rural Oklahoma.</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
   </body>
 </html>

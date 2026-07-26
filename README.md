@@ -6,58 +6,54 @@ plus free founder guides on business basics.
 
 ## Stack
 
-- React + TypeScript
-- Vite
-- Tailwind CSS v4 (via `@tailwindcss/vite`, theme defined in `src/index.css`)
+Plain static HTML/CSS/JS. No framework, no build step, no npm install.
+
+```
+index.html    all sections, single page with anchor links
+css/styles.css  hand-written styles (theme tokens as CSS custom properties)
+js/main.js      form submission logic + a photo-fallback helper
+images/         photos referenced by index.html
+favicon.svg
+```
 
 ## Getting started
 
+Open `index.html` directly in a browser, or serve the folder with any static
+file server, e.g.:
+
 ```bash
-npm install
-npm run dev
+python3 -m http.server 8000
+# or
+npx serve .
 ```
 
-- `npm run build` &mdash; type-check and build for production
-- `npm run lint` &mdash; run Oxlint
-- `npm run preview` &mdash; preview the production build locally
-
-## Project structure
-
-```
-src/
-  components/   reusable UI (Button, Header, Footer, Logo, PhotoSlot, ...)
-  sections/     one file per landing page section (Hero, Apply, Donate, ...)
-  lib/          config + placeholder submission client (api.ts, config.ts)
-  types/        shared TypeScript types for form payloads and content
-public/images/  photos referenced by <PhotoSlot> (see below)
-```
+Deployment (GitHub Pages) is handled by `.github/workflows/deploy-pages.yml`,
+which just uploads these files as-is&mdash;there's nothing to compile.
 
 ## Photos
 
-Sections use `<PhotoSlot src="/images/whatever.png" label="..." />`
-(`src/components/PhotoSlot.tsx`) instead of a plain `<img>`. If the file at
-`src` is missing, it renders a labeled placeholder instead of a broken image
-icon, so the layout still looks intentional. Currently filled in:
+`index.html` uses `<img data-fallback-label="...">` for the three photo
+spots. `js/main.js` listens for the image `error` event and swaps in a
+labeled placeholder if the file is missing, so a missing photo never shows
+a broken-image icon. Currently filled in:
 
-- `public/images/hero.png` &mdash; hero background
-- `public/images/how-it-works.png` &mdash; How It Works photo
-- `public/images/founder-spotlight.png` &mdash; founder stories photo
+- `images/hero.png` &mdash; hero background
+- `images/how-it-works.png` &mdash; How It Works photo
+- `images/founder-spotlight.png` &mdash; founder stories photo
 
-Still a placeholder: `public/images/donate.jpg` (Donate section background).
-Drop a file in with that exact name and it appears with no code changes.
+To replace a photo, just overwrite the file at that path (same filename).
 
 ## Wiring up a real backend later
 
-Grant applications and support/donation messages currently submit through
-`src/lib/api.ts`, which posts JSON to whatever webhook URLs are set in
-environment variables (see `.env.example`):
+Both forms (grant application, donate/contact) submit through
+`submitGrantApplication` / `submitContactMessage` in `js/main.js`, which
+`fetch()`-post JSON to whichever webhook URL is set in the `CONFIG` object
+at the top of that file:
 
-- `VITE_GRANT_APPLICATION_WEBHOOK_URL`
-- `VITE_CONTACT_WEBHOOK_URL`
+- `CONFIG.GRANT_APPLICATION_WEBHOOK_URL`
+- `CONFIG.CONTACT_WEBHOOK_URL`
 
-Until those are configured, submissions log to the console and the UI shows
-a friendly fallback message pointing people to `VITE_ORG_EMAIL`. Once a real
-backend (serverless function, form service, etc.) exists, set the env vars
-in `.env.local` and no component code needs to change. Donation/payment
-processing is not implemented yet&mdash;the Support section currently only
+Until those are set, submissions log to the console and the UI shows a
+friendly fallback message pointing people to `CONFIG.ORG_EMAIL`. Donation
+and payment processing isn't implemented yet&mdash;the Donate section only
 offers a contact form and a `mailto:` link.
