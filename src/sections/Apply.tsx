@@ -47,7 +47,7 @@ export default function Apply() {
   }
 
   return (
-    <section id="apply" className="border-b border-ink/10 bg-paper py-20 sm:py-28">
+    <section id="apply" className="bg-paper py-20 sm:py-28">
       <Container className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <SectionHeading
           eyebrow="Apply"

@@ -13,7 +13,7 @@ const rows = [
 
 export default function GrantDetails() {
   return (
-    <section className="border-b border-ink/10 bg-cream py-20 sm:py-28">
+    <section className="bg-cream py-20 sm:py-28">
       <Container className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-16">
         <SectionHeading
           eyebrow="The grant, at a glance"

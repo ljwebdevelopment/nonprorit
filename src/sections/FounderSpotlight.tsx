@@ -4,13 +4,13 @@ import SectionHeading from '../components/SectionHeading'
 
 export default function FounderSpotlight() {
   return (
-    <section id="stories" className="border-b border-ink/10 bg-paper py-20 sm:py-28">
+    <section id="stories" className="bg-paper py-20 sm:py-28">
       <Container className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
         <PhotoSlot
           src="/images/founder-spotlight.png"
           alt="A smiling teen looking toward the camera outdoors"
           label="founder-spotlight.png — funded teen founder portrait, 4:5"
-          className="aspect-[4/5] w-full rounded-2xl object-cover shadow-card"
+          className="aspect-[4/5] w-full rounded-2xl object-cover"
         />
 
         <div className="flex flex-col gap-6">

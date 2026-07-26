@@ -28,7 +28,7 @@ const stages = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="border-b border-ink/10 bg-paper py-20 sm:py-28">
+    <section id="how-it-works" className="bg-paper py-20 sm:py-28">
       <Container>
         <SectionHeading
           eyebrow="How it works"
@@ -41,7 +41,7 @@ export default function HowItWorks() {
             src="/images/how-it-works.png"
             alt="A group of teens sitting together outdoors"
             label="how-it-works.png — teen founder building/selling product, 4:5"
-            className="aspect-[4/5] w-full rounded-2xl object-cover shadow-card"
+            className="aspect-[4/5] w-full rounded-2xl object-cover"
           />
 
           <ol className="relative flex flex-col gap-10">

@@ -9,7 +9,7 @@ const stats = [
 
 export default function ImpactBar() {
   return (
-    <section className="border-b border-ink/10 bg-cream py-10">
+    <section className="bg-cream py-10">
       <Container>
         <div className="grid grid-cols-2 divide-x divide-dashed divide-ink/20 sm:grid-cols-4">
           {stats.map((stat) => (

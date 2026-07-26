@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
 import Container from '../components/Container'
-import PhotoSlot from '../components/PhotoSlot'
 import SectionHeading from '../components/SectionHeading'
 import { submitContactMessage } from '../lib/api'
 import { ORG_EMAIL } from '../lib/config'
@@ -45,18 +44,7 @@ export default function Donate() {
   }
 
   return (
-    <section id="donate" className="relative overflow-hidden bg-red-dark py-20 sm:py-28">
-      <PhotoSlot
-        src="/images/donate.jpg"
-        alt=""
-        label="donate.jpg — rural Oklahoma landscape or community shot, wide"
-        className="absolute inset-0 h-full w-full object-cover opacity-25"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-red-dark/95 via-red-dark/90 to-ink-900/95"
-      />
-
+    <section id="donate" className="relative overflow-hidden bg-gradient-to-b from-red-dark to-ink-900 py-20 sm:py-28">
       <Container className="relative grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <div className="flex flex-col gap-6">
           <SectionHeading

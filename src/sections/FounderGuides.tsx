@@ -27,7 +27,7 @@ const guides: FounderGuide[] = [
 
 export default function FounderGuides() {
   return (
-    <section id="guides" className="border-b border-ink/10 bg-cream py-20 sm:py-28">
+    <section id="guides" className="bg-cream py-20 sm:py-28">
       <Container>
         <SectionHeading
           eyebrow="Founder guides"
