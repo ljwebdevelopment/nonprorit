@@ -9,7 +9,9 @@
   --cream: #f6f1e4;
   --cream-dim: #ebe3d1;
   --brick: #9c3b2e;
-  --brick-light: #b8503f;
+  /* Hover darkens rather than lightens: #b8503f on cream text is only 4.37:1,
+     under the WCAG AA 4.5:1 floor for the button's 0.875rem label. */
+  --brick-deep: #7d2e23;
   --gold: #c7a233;
   --gold-light: #ddbf5c;
   --ink: #17203a;
@@ -156,10 +158,12 @@ a {
 }
 
 .seal {
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 48px;
   flex-shrink: 0;
-  color: var(--gold);
+  border-radius: 50%;
+  background: var(--cream);
+  box-shadow: 0 0 0 1px rgba(199, 162, 51, 0.55);
 }
 
 .wordmark {
@@ -308,6 +312,21 @@ a {
   isolation: isolate;
 }
 
+/* Cherokee National Capitol at dusk, behind the headline */
+.hero-photo {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 62%;
+  opacity: 0.3;
+  /* Darkened so the cream headline and gold eyebrow clear WCAG AA over the
+     photo's brightest areas (sky and the lit brick face). */
+  filter: saturate(0.7) brightness(0.5);
+}
+
 .hero-glow {
   position: absolute;
   z-index: -1;
@@ -318,8 +337,8 @@ a {
   height: 130%;
   background: radial-gradient(
     ellipse at center,
-    rgba(199, 162, 51, 0.26) 0%,
-    rgba(156, 59, 46, 0.16) 38%,
+    rgba(199, 162, 51, 0.17) 0%,
+    rgba(156, 59, 46, 0.12) 38%,
     rgba(28, 43, 74, 0) 70%
   );
   pointer-events: none;
@@ -378,8 +397,8 @@ a {
 }
 
 .btn-primary:hover {
-  background: var(--brick-light);
-  border-color: var(--brick-light);
+  background: var(--brick-deep);
+  border-color: var(--brick-deep);
   transform: translateY(-2px);
 }
 
@@ -409,6 +428,35 @@ a {
   color: var(--navy);
   max-width: 24ch;
   text-wrap: balance;
+}
+
+.mission-intro {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.mission-figure {
+  margin: 0;
+}
+
+.mission-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid rgba(28, 43, 74, 0.18);
+  border-bottom: 3px solid var(--brick);
+}
+
+.mission-figure figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--ink-muted);
+  border-left: 2px solid var(--gold);
+  padding-left: 0.75rem;
 }
 
 .pillars {
@@ -474,11 +522,29 @@ a {
 
 .get-involved {
   position: relative;
+  overflow: hidden;
+  isolation: isolate;
   background: linear-gradient(165deg, var(--navy) 0%, var(--navy-deep) 60%, #4a2a2a 100%);
   color: var(--cream);
   padding: clamp(4rem, 8vw, 6.5rem) 0;
   border-top: 3px solid var(--gold);
   border-bottom: 3px solid var(--gold);
+}
+
+/* Cherokee County at sunset, kept faint so card text stays legible */
+.involved-photo {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.16;
+  filter: saturate(0.6);
+}
+
+.get-involved .section-inner {
+  position: relative;
 }
 
 .get-involved h2 {
@@ -620,6 +686,14 @@ a {
 
   .nav-toggle {
     display: block;
+  }
+
+  .mission-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-figure {
+    max-width: 32rem;
   }
 
   .pillars {
