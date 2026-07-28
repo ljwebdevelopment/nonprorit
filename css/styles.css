@@ -321,26 +321,33 @@ a {
   height: 100%;
   object-fit: cover;
   object-position: center 62%;
-  opacity: 0.3;
-  /* Darkened so the cream headline and gold eyebrow clear WCAG AA over the
-     photo's brightest areas (sky and the lit brick face). */
-  filter: saturate(0.7) brightness(0.5);
+  /* Full opacity: fading the photo into the flat background blends its range
+     toward a single value and the building turns to mud. A brightness multiply
+     scales highlights and shadows together, so the dusk contrast survives. */
+  opacity: 1;
+  filter: brightness(0.72) saturate(1.05);
 }
 
+/* Scrim, not a fade: darkest directly behind the text block and at the top and
+   bottom edges, clearing toward the sides so the lit facade stays readable. */
 .hero-glow {
   position: absolute;
   z-index: -1;
-  top: -30%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(1000px, 130%);
-  height: 130%;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(199, 162, 51, 0.17) 0%,
-    rgba(156, 59, 46, 0.12) 38%,
-    rgba(28, 43, 74, 0) 70%
-  );
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse 68% 52% at 50% 45%,
+      rgba(9, 15, 28, 0.8) 0%,
+      rgba(9, 15, 28, 0.55) 58%,
+      rgba(9, 15, 28, 0.1) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(19, 30, 53, 0.85) 0%,
+      rgba(19, 30, 53, 0.34) 30%,
+      rgba(19, 30, 53, 0.38) 60%,
+      rgba(19, 30, 53, 0.9) 100%
+    );
   pointer-events: none;
 }
 
@@ -432,13 +439,16 @@ a {
 
 .mission-intro {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
 }
 
 .mission-figure {
   margin: 0;
+  /* Source is 305px wide; never scale it up past that or it goes soft. */
+  max-width: 305px;
+  justify-self: end;
 }
 
 .mission-figure img {
@@ -531,20 +541,38 @@ a {
   border-bottom: 3px solid var(--gold);
 }
 
-/* Cherokee County at sunset, kept faint so card text stays legible */
-.involved-photo {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.16;
-  filter: saturate(0.6);
-}
-
 .get-involved .section-inner {
   position: relative;
+}
+
+/* Full-bleed band. No text sits on it, so it runs at full strength. */
+.county-band {
+  position: relative;
+  display: block;
+  margin: 0;
+  /* No bottom rule: .get-involved supplies its own gold border-top. */
+  border-top: 3px solid var(--gold);
+}
+
+.county-band img {
+  display: block;
+  width: 100%;
+  height: clamp(150px, 26vw, 260px);
+  object-fit: cover;
+  /* Favour the upper third — that's where the sunset and the lake are. */
+  object-position: center 34%;
+}
+
+.county-band figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: rgba(9, 15, 28, 0.82);
+  color: var(--cream);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.5rem 0.9rem;
 }
 
 .get-involved h2 {
